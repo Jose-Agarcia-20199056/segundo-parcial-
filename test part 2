@@ -1,6 +1,6 @@
 using System;
 
-namespace sistema_de_votacion
+namespace sistema_de_votacion 
 {
     class Program
     {
