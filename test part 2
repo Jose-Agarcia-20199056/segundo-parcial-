@@ -1,0 +1,112 @@
+using System;
+
+namespace sistema_de_votacion
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {       //sistema de votacion 
+                //  int votos;
+            int vt;
+            int count = 0;  
+            int num1 = 0;   
+            int num2 = 0;   
+            int num3 = 0;   
+            int num4 = 0;
+           
+            Console.WriteLine("candidato (1) Pedro Perez,aspirante a presidente (PL) partido liberalista,fundado el 22 de enero de 1990");
+            Console.WriteLine("candidato (2) Carlos Garcia,aspirante a presidente (PR)Partido Realista,fundado el 30 de mayo de 1975");
+            Console.WriteLine("candidato (3) Pablo Gomez,aspirante a presidente (PNV)Partido Nueva Vision,fundado el 15 de junio de 1926");
+            Console.WriteLine("candidato (4) Manuel Perdomo,aspirante a presidente (PNG)Partido Nueva Generacion,fundado el 11 de agosto de 1960");
+            Console.WriteLine("presione el numero de su candidato");
+            vt=Convert.ToInt32(Console.ReadLine());
+
+            Random aleatorio = new Random();
+
+
+            for ( count = 0; count <=1000; count++) {
+
+                vt = aleatorio.Next(1, 5);
+
+                if (vt==1)
+                {
+                    num1 = num1 + 1;
+                }
+                else if (vt== 2)
+                {
+                    num2 = num2 + 1;
+                }
+
+                else if (vt== 3)
+                {
+                    num3 = num3 + 1;
+                }
+
+                else if (vt== 4)
+                {
+                    num4 = num4 + 1;
+                }
+            }
+
+            float cantidad1 =  num1 * 100;
+            float porcentj1 = cantidad1 / 1000;
+            float cantidad2 = num2 * 100;
+            float porcentj2 = cantidad2 / 1000;
+            float cantidad3 = num3 * 100;
+            float porcentaj3 = cantidad3 / 1000;
+            float cantidad4 = num4 * 100;
+            float porcentaj4 = cantidad4 / 1000;
+
+            int all = num1 + num2 + num3 + num4 - 1;
+
+            int[] votos = { num1, num2, num3, num4 };
+            Array.Sort(votos);
+
+            for (int cnt = 0; cnt < votos.Length; cnt++)
+            {
+                if (votos [3 - cnt] == num1)
+                {
+                    Console.WriteLine("candidato (1) Pedro Perez votos: {0}, votos acumulados {1}%", num1, porcentj1);
+
+                }
+
+                if (votos[3 - cnt] == num2)
+                {
+                    Console.WriteLine("candidato (2) Carlos Garcia votos: {0}, votos acumulados {1}%", num2, porcentj2);
+
+
+             
+                }
+                if (votos[3 - cnt] == num3)
+                {
+
+                    Console.WriteLine("candidato (3) Pablo Gomez votos: {0}, votos acumulados {1}%", num3, porcentaj3);
+
+                }
+
+                if (votos[3 - cnt] == num4)
+
+                {
+
+                    Console.WriteLine("candidato (4) Manuel Perdomo votos: {0}, votos acumulados {1}%", num4, porcentaj4);
+
+                }
+
+                
+            }
+
+
+            Console.WriteLine("todos los votos en total: " + all);
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
